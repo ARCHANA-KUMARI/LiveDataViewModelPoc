@@ -23,15 +23,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DataBindingUtil.setContentView(this, R.layout.activity_main);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mUserModel = new ViewModelProvider(this).get(UserModel.class);
+        mBinding.setUserModel(mUserModel);
+
         User user = new User();
         user.setmID("1");
         user.setmName("Archana");
         mUserModel.addUser(user);
+        try {
+            //To check live data set value overriden
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         User user1 = new User();
-        user.setmID("2");
-        user.setmName("Ragini");
+        user1.setmID("2");
+        user1.setmName("Ragini");
         mUserModel.addUser(user1);
 
         mUserModel.getUserLiveData().observe(this, new Observer<User>() {
