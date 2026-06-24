@@ -2,7 +2,6 @@ package com.example.viewmodelpoc;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -66,5 +65,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Todo Archana 25th june
+    //1. overload onFinish() and check whether this callback is getting trigger in case of configuration change.
+    //.  Internal working of ViewModel
+    //Internal working of DataBInding
 
 }
