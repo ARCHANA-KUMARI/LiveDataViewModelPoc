@@ -31,7 +31,7 @@ public class LiveDataInWorkerThread implements Runnable {
 
     public void addEmployee(Employee employee) {
         if (employee != null) {
-            //liveData.setValue(employee);
+            //liveData.setValue(employee);// If we call this method then it will give  java.lang.IllegalStateException: Cannot invoke setValue on a background thread
             liveData.postValue(employee);
         }
     }
